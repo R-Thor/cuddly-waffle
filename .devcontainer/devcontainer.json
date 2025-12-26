@@ -1,0 +1,30 @@
+{
+  "name": "VS Code Extension: Podman",
+  "build": {
+    "dockerfile": "Dockerfile.dev"
+  },
+  // 1. Force VS Code to use 'node'
+  "remoteUser": "node",
+  "containerUser": "node",
+
+  "features": {
+    // This feature often helps with UID/GID mapping in rootless Podman
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "configureZshPoll": true,
+      "username": "node"
+    }
+  },
+
+  "runArgs": [
+    "--userns=keep-id",
+    "--security-opt", "label=disable"
+  ],
+
+  "containerEnv": {
+    "DISPLAY": ":0"
+  },
+
+  // 2. This is the crucial part: tell the extension to stop trying 
+  // to update the 'vscode' user UID.
+  "updateRemoteUserUID": false
+}

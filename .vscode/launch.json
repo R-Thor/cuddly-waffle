@@ -1,0 +1,20 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run Extension",
+            "type": "extensionHost",
+            "request": "launch",
+            "args": [
+                // Tell VS Code the extension is in the subfolder
+                "--extensionDevelopmentPath=${workspaceFolder}/src/hellovscodeextention"
+            ],
+            "outFiles": [
+                // Look for the compiled JS in the subfolder's out directory
+                "${workspaceFolder}/src/hellovscodeextention/out/**/*.js"
+            ],
+            "preLaunchTask": "${defaultBuildTask}"
+        }
+    ]
+}
+

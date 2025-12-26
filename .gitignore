@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+dist/
+out/
+
+# Compilation logs and build artifacts
+*.log
+*.tsbuildinfo
+.eslintcache
+
+# VS Code Extension specifics
+# This is the packaged extension file (if you run vsce package)
+*.vsix
+
+# Local testing data
+.vscode-test/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# If you want to ignore environment variables
+.env
+
